@@ -5,7 +5,7 @@ import requests
 
 load_dotenv()
 token = os.getenv("TOKEN")
-guild = [752983388683632720]
+guild = [os.getenv("GUILD")]
 dockerstate = os.getenv("DOCKER")
 
 if dockerstate:
