@@ -1,0 +1,18 @@
+version: '3.3'
+
+networks:
+  internal:
+    name: internal
+
+services:
+  bot:
+    build: bot
+    networks:
+      - internal
+    environment:
+      - DOCKER=yes
+  server:
+    build: server
+    networks:
+      - internal
+    
