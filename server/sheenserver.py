@@ -17,11 +17,13 @@ def generate():
     if request.method == 'GET':
         gentext = ai.generate_one()
         return(str(gentext))
+    elif request.method == 'POST':
+        context = request.json['context']
+        gentext = ai.generate_one(prompt=context)
+        return(str(gentext))
     else:
-        return "hi"
+        return "hm."
 
 @app.route('/')
 def hello_world():
     return "gaming"
-
-
